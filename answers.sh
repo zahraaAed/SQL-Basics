@@ -62,3 +62,25 @@ SELECT Companies.Name
 FROM Employees 
 JOIN Companies ON Employees.Company = Companies.Name
 WHERE Employees.Role = 'Graphic Designer';
+
+
+#counts & filter
+
+#selectt name of student with highest points
+SELECT name FROM students ORDER BY points DESC LIMIT 1;
+
+#average points 
+SELECT AVG(points) FROM students;
+
+#nb of students pt>500
+SELECT COUNT(*)
+FROM students
+WHERE points = 500;
+
+#name of students with letter s
+SELECT name FROM students WHERE name LIKE '%s%';
+
+#Find all students based on the decreasing order of their points
+SELECT *
+FROM students
+ORDER BY points DESC;
