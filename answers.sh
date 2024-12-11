@@ -42,3 +42,23 @@ WHERE Name = 'Layal';
 
 #remove layal's data
 DELETE FROM students WHERE Name = 'Layal';
+
+
+#joins
+SELECT Employees.Name AS EmployeeName, Companies.Name AS CompanyName, Companies.Date 
+FROM Employees 
+JOIN Companies ON Employees.Company = Companies.Name;
+
+
+#Names for employees who worked before 2000
+SELECT Employees.Name 
+FROM Employees 
+JOIN Companies ON Employees.Company = Companies.Name
+WHERE Companies.Date < '2000-01-01';
+
+
+##name of company that has graphic designer
+SELECT Companies.Name 
+FROM Employees 
+JOIN Companies ON Employees.Company = Companies.Name
+WHERE Employees.Role = 'Graphic Designer';
